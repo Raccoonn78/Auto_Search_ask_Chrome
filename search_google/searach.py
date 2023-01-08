@@ -12,13 +12,13 @@ import pandas as pd
 #df = pd.DataFrame({'ASK': ['test'], 'ANS': ['test']})
 
 
-driver = webdriver.Chrome('C:\\Users\\Дмитрий\\Desktop\\VS_Code\\creative_project\\search_google\\chromedriver.exe')
+driver = webdriver.Chrome('chromedriver.exe')
 
 
 
 def search(name_ask):
     df = pd.DataFrame({'ASK': ['test'], 'ANS': ['test']})    
-    #call = input('Введите ссылку или запрос: ')
+   
     for i in range(len(name_ask)):
         
         if re.search(r'\ ', name_ask[i]):
@@ -47,7 +47,7 @@ def search(name_ask):
                     
                 pass
         time.sleep(6)
-    df.to_excel('teams.xlsx')
+    df.to_excel('ans_google.xlsx') # создание excel файла
             
 
 #//*[@id="kp-wp-tab-overview"]/div[1]/div/div/div/div/div/div/div[1]/div/div/div/span[1]    
@@ -56,7 +56,7 @@ def open_file():
 
     
 
-    fileObj = codecs.open( "C:\\Users\Дмитрий\\Desktop\\VS_Code\\creative_project\\search_google\\qwerst.txt", "r", "utf_8_sig" )
+    fileObj = codecs.open( "qwerst.txt", "r", "utf_8_sig" )#ваш файл с вопросами
     text = fileObj.read() # или читайте по строке
     fileObj.close()
 
